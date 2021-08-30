@@ -27,7 +27,7 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
   - `dataset_name` - Name of the dataset (e.g. Places, DIV2K etc. Used for saving dataset name in csv file.). Default - Places
   - `dataset_with_subfolders` - Set to `True` if your dataset has sub-folders containing images. Default - False
   - `dataset_format` - Whether you are providing flists or just path to the image folders. Default - image.
-  - `model_name1` - Name of the model. Used for saving metrics values in the CSV. Default - Own.
+  - `model_name` - Name of the model. Used for saving metrics values in the CSV. Default - Own.
   - `generated_image_path` - Path to your generated images.
   - `gt_image_path` - Path to your ground truth images.
   - `batch_size` - batch size you want to use. Default - 4.
