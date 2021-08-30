@@ -1,5 +1,5 @@
 # Image Quality Evaluation Metrics
-Implementation of Common Image Evaluation Metrics by [Sayed Nadim](sayednadim.github.io). The repo is built based on full reference image quality metrics such as L1, L2, PSNR, SSIM, LPIPS. and feature-level quality metrics such as FID, IS. It can be used for evaluating image denoising, colorization, inpainting, deraining, dehazing etc. where we have access to ground truth.
+Implementation of some common full reference image quality metrics. The repo is built based on full reference image quality metrics such as L1, L2, PSNR, SSIM, LPIPS. and feature-level quality metrics such as FID, IS. It can be used for evaluating image denoising, colorization, inpainting, deraining, dehazing etc. where we have access to ground truth.
 
 The goal of this repo is to provide a common evaluation script for image evaluation tasks. It contains some commonly used image quality metrics for image evaluation (e.g., L1, L2, SSIM, PSNR, [LPIPS](https://github.com/richzhang/PerceptualSimilarity), FID, IS). 
 
