@@ -1,0 +1,50 @@
+# data parameters
+dataset_name: Places
+dataset_with_subfolders: False # True
+dataset_format: image # file_list
+generated_image_path: /media/la-belva/2681c8e6-6bc0-4b9f-9dba-22ade6dedc89/home/la_belva/PycharmProjects/Comparison_models/LAB_Inpainting/celeb/test_results_new_checkpoints_no_errors/output/ff_mask/mask_10_20
+gt_image_path: /media/la-belva/2681c8e6-6bc0-4b9f-9dba-22ade6dedc89/home/la_belva/PycharmProjects/Comparison_values/celeb_random_500
+return_dataset_name: False
+
+# experiment
+model_name: own
+
+# processing parameters
+batch_size: 4
+image_shape: [ 256, 256, 3 ]
+random_crop: False
+
+# print option
+print_interval_frequency: 1
+
+# save options
+save_results: True
+save_results_path: src/results/
+save_file_name: metrics
+save_type: csv # npz
+
+# gpu options
+gpu_mode: True
+cuda: True
+gpus: 1
+gpu_ids: [ 0 ]  # set the GPU ids to use, e.g. [0] or [1, 2]
+cudnn_benchmark: True
+threads: 4
+
+## Metrics
+## image metrics
+#l1: True
+#l2: True
+#ssim: True
+#psnr: True
+#dists: True
+#dss: False
+#fsim: False
+#lpips: True
+#
+## feature metrics
+#fid: True
+#is: True
+#gs: False
+#kid: False
+#msid: False
