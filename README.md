@@ -37,7 +37,7 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
   - `save_results` - If you want to save the results in csv files. Saved to `results` folder. Default - True.
   - `save_type` - csv or npz. npz is not implemented yet.
 
-### To-do
+### To-do metrics
 - [x] L1
 - [x] L2
 - [x] SSIM
@@ -45,6 +45,11 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
 - [x] LPIPS
 - [x] FID
 - [x] IS
+### To-do tasks
+- [x] implementation of the framework
+- [x] primary check for errors
+- [ ] Sequential evaluation (i.e. folder1,folder2, folder3... vs gt, useful for denoising, inpainting etc.)
+- [ ] unittest
 
 ### Acknowledgement
 Thanks to [PhotoSynthesis Team](https://github.com/photosynthesis-team/piq) for the wonderful implementation of the metrics. Please cite accordingly if you use PIQ for the evaluation.
