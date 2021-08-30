@@ -33,6 +33,9 @@ class Dataset(data.Dataset):
         self.dataset_name = config.dataset_name
         self.return_dataset_name = config.return_dataset_name
 
+        if config.random_crop:
+            Warning("Random crop is not implemented yet. Images are being resized.")
+
     def __getitem__(self, index):
         img = image_reader(self.img_samples[index])
         gt = image_reader(self.gt_samples[index])

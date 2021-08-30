@@ -1,4 +1,6 @@
-# Inpainting Evaluation Metrics (On-going)
+# Image Quality Evaluation Metrics (On-going)
+Implementation of Common Image Evaluation Metrics by [Sayed Nadim](sayednadim.github.io). The repo is built based on full reference image quality metrics such as L1, L2, PSNR, SSIM, LPIPS. and feature-level quality metrics such as FID, IS. It can be used for evaluating image denoising, colorization, inpainting, deraining, dehazing etc. where we have access to ground truth.
+
 The goal of this repo is to provide a common evaluation script for image evaluation tasks. It contains some commonly used image quality metrics for image evaluation (e.g., L1, L2, SSIM, PSNR, [LPIPS](https://github.com/richzhang/PerceptualSimilarity), FID, IS). 
 
 Pull requests and  corrections/suggestions will be cordially appreciated. 
@@ -7,8 +9,7 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
 - Images are scaled to [0,1]. If you need to change the data range, please make sure to change the data range in SSIM and PSNR.
 - Number of generated images and ground truth images have to be exactly same. 
 - I have resized the images to be (`256,256`). You can change the resolution based on your needs.
-- Please make sure that all the images (generated and gt images) are in the corresponding folders. ~~Currently,it can not calculate metrics if there are sub-folders. I will update the code to calculate for sub-folders as well.~~ 
-
+- Please make sure that all the images (generated and gt images) are in the corresponding folders. 
 
 ### Requirements
 - PyTorch ( `>= 1.3` )

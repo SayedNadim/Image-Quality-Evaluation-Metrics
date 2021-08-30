@@ -1,6 +1,6 @@
 import os
 from src.dataset.dataset import build_dataloader
-from src.metrics.inpainting_metrics import Inpainting_Metrics
+from src.metrics.image_quality_metrics import Image_Quality_Metric
 from src.utils.config import Config
 import csv
 
@@ -19,7 +19,7 @@ def main(config):
                                           num_workers=config.threads)
 
     # Calling metric classes
-    metric_class = Inpainting_Metrics(config, dataloader, feat_dataloader_img, feat_dataloader_gt)
+    metric_class = Image_Quality_Metric(config, dataloader, feat_dataloader_img, feat_dataloader_gt)
     metrics = metric_class()
 
     print("Evaluation Results")
@@ -38,7 +38,7 @@ def main(config):
         with open(result_file_path, 'w') as csv_file:
             writer = csv.writer(csv_file)
             for key, value in metrics.items():
-                writer.writerow([key, value])
+                writer.writerow([key, value.data.item()])
 
         print("\n"
               "Saved metric in {}."
@@ -52,7 +52,6 @@ def main(config):
 if __name__ == '__main__':
     print(
         "Implementation of Common Image Evaluation Metrics "
-        "\n"
         "by Sayed Nadim (sayednadim.github.io)"
         "\n"
         "The repo is built based on full reference image quality metrics such as L1, L2, PSNR, SSIM, LPIPS."

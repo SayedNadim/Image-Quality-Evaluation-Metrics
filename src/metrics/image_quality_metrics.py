@@ -23,7 +23,7 @@ self.weights = [torch.tensor(w) for w in weights]
 '''
 
 
-class Inpainting_Metrics(nn.Module):
+class Image_Quality_Metric(nn.Module):
     def __init__(self, config, dataloader, feature_dataloader_img, feature_dataloader_gt):
         super().__init__()
         self.config = config
