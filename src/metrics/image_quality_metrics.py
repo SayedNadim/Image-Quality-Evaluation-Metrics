@@ -51,34 +51,6 @@ class ImageQualityMetric(nn.Module):
 
         print("Configuration")
         print("-" * 80)
-        # print("dataset_name: {}"
-        #       "\n"
-        #       "dataset_with_subfolders: {}"
-        #       "\n"
-        #       "dataset_format: {}"
-        #       "\n"
-        #       "generated_image_path: {}"
-        #       "\n"
-        #       "ground_truth_image_path: {}"
-        #       "\n"
-        #       "model_name: {}"
-        #       "\n"
-        #       "batch_size: {}"
-        #       "\n"
-        #       "image_shape: {}"
-        #       "\n"
-        #       "threads: {}"
-        #       "\n"
-        #       "save_results: {}"
-        #       "\n"
-        #       "save_results_path:  {}"
-        #       "\n"
-        #       "save_file_name: {}"
-        #       "\n"
-        #       "save_type: {}".format(config['dataset_name'], config['dataset_with_subfolders'], config['dataset_format'],
-        #                              config['generated_image_path'], config['ground_truth_image_path'], config['model_name'],
-        #                              config['batch_size'], config['image_shape'], config['threads'], config['save_results'],
-        #                              config['save_results']_path, config['save_file_name'], config['save_type']))
         for key, value in config.items():
             print("{}: {}".format(key, value))
         print("-" * 80)
