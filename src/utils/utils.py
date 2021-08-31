@@ -98,6 +98,22 @@ def canny_edge_map(image):
     return out
 
 
+def resize_image(img, height=256, width=256, centerCrop=False):
+    imgh, imgw, imgc = img.shape
+    if imgh <= height or imgw <= width:
+        img = cv2.resize(img, (width * 1.5, height * 1.5, imgc))
+
+    if centerCrop and imgh != imgw:
+        # center crop
+        side = np.minimum(imgh, imgw)
+        j = (imgh - side) // 2
+        i = (imgw - side) // 2
+        img = img[j:j + side, i:i + side, ...]
+
+    img = cv2.resize(img, (height, width, imgc))
+    return img
+
+
 def get_crop_params(image, crop_size, crop_method='random_crop'):
     crop_height, crop_width = crop_size
     start_x, end_x, start_y, end_y = 0, 0, 0, 0
@@ -164,22 +180,6 @@ def reduce_std(tensor, axis=None, keepdim=False):
     for i in sorted(axis, reverse=True):
         tensor = torch.std(tensor, dim=i, keepdim=keepdim)
     return tensor
-
-
-def resize_image(img, height=256, width=256, centerCrop=False):
-    imgh, imgw, imgc = img.shape
-    if imgh <= height or imgw <= width:
-        img = cv2.resize(img, (width * 1.5, height * 1.5, imgc))
-
-    if centerCrop and imgh != imgw:
-        # center crop
-        side = np.minimum(imgh, imgw)
-        j = (imgh - side) // 2
-        i = (imgw - side) // 2
-        img = img[j:j + side, i:i + side, ...]
-
-    img = cv2.resize(img, (height, width, imgc))
-    return img
 
 
 # array image functions
