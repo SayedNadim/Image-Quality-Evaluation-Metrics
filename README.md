@@ -9,7 +9,7 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
 - Images are scaled to [0,1]. If you need to change the data range, please make sure to change the data range in SSIM and PSNR.
 - Number of generated images and ground truth images have to be exactly same. 
 - I have resized the images to be (`256,256`). You can change the resolution based on your needs.
-- Please make sure that all the images (generated and gt images) are in the corresponding folders. 
+- Please make sure that all the images (generated and ground_truth images) are in the corresponding folders. 
 
 ### Requirements
 - PyTorch ( `>= 1.3` )
@@ -29,7 +29,7 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
   - `dataset_format` - Whether you are providing flists or just path to the image folders. Default - image.
   - `model_name` - Name of the model. Used for saving metrics values in the CSV. Default - Own.
   - `generated_image_path` - Path to your generated images.
-  - `gt_image_path` - Path to your ground truth images.
+  - `ground_truth_image_path` - Path to your ground truth images.
   - `batch_size` - batch size you want to use. Default - 4.
   - `image_shape` - Shape of the image. Both generated image and ground truth images will be resized to this width. Default -  [256, 256, 3].
   - `threads` - Threads to be used for multi-processing Default - 4.
@@ -48,7 +48,7 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
 ### To-do tasks
 - [x] implementation of the framework
 - [x] primary check for errors
-- [ ] Sequential evaluation (i.e. folder1,folder2, folder3... vs gt, useful for denoising, inpainting etc.)
+- [ ] Sequential evaluation (i.e. folder1,folder2, folder3... vs ground_truth, useful for denoising, inpainting etc.)
 - [ ] unittest
 
 ### Acknowledgement

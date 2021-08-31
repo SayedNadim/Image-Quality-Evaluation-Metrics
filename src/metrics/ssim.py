@@ -16,7 +16,7 @@ def ssim(x: torch.Tensor, y: torch.Tensor, kernel_size: int = 11, kernel_sigma: 
     Args:
         x: An input tensor. Shape :math:`(N, C, H, W)` or :math:`(N, C, H, W, 2)`.
         y: A target tensor. Shape :math:`(N, C, H, W)` or :math:`(N, C, H, W, 2)`.
-        kernel_size: The side-length of the sliding window used in comparison. Must be an odd value.
+        kernel_size: The side-lenground_truthh of the sliding window used in comparison. Must be an odd value.
         kernel_sigma: Sigma of normal distribution.
         data_range: Maximum value range of images (usually 1.0 or 255).
         reduction: Specifies the reduction type:

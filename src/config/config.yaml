@@ -2,8 +2,8 @@
 dataset_name: Places                         # used for saving csv. Easy to remember which dataset you're evalulating, especially, if you're using multiple datasets.
 dataset_with_subfolders: False               # True
 dataset_format: image                        # file_list # file_list is not implemented. I will implement it later. Easier to implement.
-generated_image_path: ./generated_images     # Path to the generated/reproduced/output images.
-gt_image_path: ./gt_images                   # Path to the corresponding ground truth images.
+generated_image_path: ./generated_image_folder     # Path to the generated/reproduced/output images.
+ground_truth_image_path: ./ground_truth_image_folder # Path to the corresponding ground truth images.
 return_dataset_name: False                   # Currently, no use. In future, it will be used for multi-testing.
 
 # experiment
