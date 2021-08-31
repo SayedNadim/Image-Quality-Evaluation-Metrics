@@ -24,7 +24,7 @@ def psnr_calculation(x: torch.Tensor, y: torch.Tensor, data_range: Union[int, fl
     _validate_input([x, y], dim_range=(4, 5), data_range=(0, data_range))
 
     # Constant for numerical stability
-    EPS = 1e-8
+    EPS = 1e-8 # not used. It was providing 80 instead of inf in case of self-evaluation, due to the log. 
 
     x = x / float(data_range)
     y = y / float(data_range)
