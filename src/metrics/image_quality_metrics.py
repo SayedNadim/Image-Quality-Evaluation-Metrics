@@ -40,7 +40,7 @@ class ImageQualityMetric(nn.Module):
         self.is_class = piq.IS()
         self.gs_class = piq.GS()
         if torch.cuda.is_available():
-            self.device = 'cuda'
+            self.device = 'cuda:0'
             self.l1_distance.cuda()
             self.ssim_distance.cuda()
             self.fid_class.cuda()
