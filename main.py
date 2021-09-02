@@ -82,21 +82,22 @@ def main(config):
 
 if __name__ == '__main__':
     print(
-        "Implementation of Common Image Evaluation Metrics "
-        "by Sayed Nadim (sayednadim.github.io)"
+        "#====================================================================================================#"
         "\n"
-        "The repo is built based on full reference "
-        "image quality metrics such as L1, L2, PSNR, SSIM, LPIPS."
+        "#                                Common Image Evaluation Metrics                                     #"
         "\n"
-        "and feature-level quality metrics such as FID, IS."
+        "#====================================================================================================#"
         "\n"
-        "It can be used for evaluating "
-        "image denoising, colorization, "
-        "inpainting, deraining, dehazing etc. "
-        "where we have access to ground truth."
+        "# Implementation of Common Image Evaluation Metrics by Sayed Nadim (sayednadim.github.io)            #"
         "\n"
+        "# The repo is built based on full reference image quality metrics such as L1, L2, PSNR, SSIM, LPIPS. #"
+        "\n"
+        "# and feature-level quality metrics such as FID, IS. It can be used for evaluating image denoising,  #"
+        "\n"
+        "# colorization, inpainting, deraining, dehazing etc. supervised tasks.                               #"
+        "\n"
+        "#====================================================================================================#"
     )
-    print("-" * 80)
     CONFIG_PATH = 'src/config/config.yaml'
     CONFIG_FILE = get_config(CONFIG_PATH)
     main(CONFIG_FILE)
