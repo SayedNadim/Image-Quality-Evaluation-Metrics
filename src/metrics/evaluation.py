@@ -60,7 +60,7 @@ def single_evaluation(config):
     print("=" * 80)
     # saving files
     if config['save_results']:
-        save_results(config=config, metrics=metrics)
+        save_results(config=config, metrics=metrics, name='None')
     print("\n")
     print("=" * 80)
     print("Done with evaluation.")
@@ -162,14 +162,10 @@ def multiple_evaluation(config):
                 print("=" * 80)
                 # saving files
                 if config['save_results']:
-                    individual_sub_folder_tail_2 = individual_folders[-10:]  # make sure to edit based on your need!
-                    individual_sub_folder_tail_1 = individual_folders[
-                                                   -18:-11]  # make sure to edit based on your need!
-                    name = config['save_file_name'] + \
-                           '_' + config['dataset_name'] + \
-                           '_' + config['model_name'] + '_' + \
-                           individual_sub_folder_tail_1 + '_' + \
-                           individual_sub_folder_tail_2 + '.csv'
+                    individual_sub_folder_tail_1 = individual_folders.split('/')[-2]  # make sure to edit based on your need!
+                    individual_sub_folder_tail_2 = individual_folders.split('/')[-1]  # make sure to edit based on your need!
+                    name =  individual_sub_folder_tail_1 + '/' + \
+                           individual_sub_folder_tail_2
                     save_results(config=config, metrics=metrics, name=name)
                 print("Done with {} folder".format(j))
                 print("=" * 80)
@@ -221,11 +217,9 @@ def multiple_evaluation(config):
             print("=" * 80)
             # saving files
             if config['save_results']:
-                individual_sub_folder_tail_1 = individual_folders[-10:]  # make sure to edit based on your need!
-                name = config['save_file_name'] + \
-                       '_' + config['dataset_name'] + \
-                       '_' + config['model_name'] + '_' + \
-                       individual_sub_folder_tail_1 + '_' + '.csv'
+                individual_sub_folder_tail_1 = individual_folders.split('/')[-1]  # make sure to edit based on your need!
+                print(individual_folders)
+                name = individual_sub_folder_tail_1
                 save_results(config=config, metrics=metrics, name=name)
             print("=" * 80)
             print("\n")
