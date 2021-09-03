@@ -10,7 +10,7 @@ PSNR, [LPIPS](https://github.com/richzhang/PerceptualSimilarity), FID, IS).
 
 Pull requests and corrections/suggestions will be cordially appreciated.
 
-### *Inception Score is not correct owing to buggy implementation. I will check and confirm. Other metrics are ok!*
+### *Inception Score is not correct. I will check and confirm. Other metrics are ok!*
 
 ### Please Note
 
