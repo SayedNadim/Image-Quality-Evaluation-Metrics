@@ -103,10 +103,10 @@ class ImageQualityMetric(nn.Module):
                 self.feature_dataloader_img, self.feature_dataloader_ground_truth
             img_feature = self.fid_class.compute_feats(img_load)
             ground_truth_feature = self.fid_class.compute_feats(ground_truth_load)
-            fid_value = self.fid_class.compute_metric(img_feature, ground_truth_feature)
+            fid_value = self.fid_class(img_feature, ground_truth_feature)
             img_feature_is = self.is_class.compute_feats(img_load)
             ground_truth_feature_is = self.is_class.compute_feats(ground_truth_load)
-            is_value = self.is_class.compute_metric(img_feature_is, ground_truth_feature_is)
+            is_value = self.is_class(img_feature_is, ground_truth_feature_is)
 
             t_2 = time.time()
 

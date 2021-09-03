@@ -120,7 +120,7 @@ def main(config):
                     print("Working with structure 2")
                     print("=" * 80)
                     print("=" * 80)
-                    print("Currently in {}".format(str(individual_folders_list[i])))
+                    print("Currently in {}".format(str(individual_folders_list[j])))
                     print("=" * 80)
                     individual_folders = sub_folder_list[i] + '/' + individual_folders_list[j]  # take the path
                     dataloader = build_dataloader_multiple_evaluation(config=config,
