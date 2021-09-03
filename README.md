@@ -50,7 +50,7 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
 ### To-do tasks
 - [x] implementation of the framework
 - [x] primary check for errors
-- [ ] Sequential evaluation (i.e. folder1,folder2, folder3... vs ground_truth, useful for denoising, inpainting etc.)
+- [x] Sequential evaluation (i.e. folder1,folder2, folder3... vs ground_truth, useful for denoising, inpainting etc.)
 - [ ] unittest
 
 ### Acknowledgement
