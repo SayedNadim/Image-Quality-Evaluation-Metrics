@@ -45,8 +45,8 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
 - [x] SSIM
 - [x] PSNR
 - [x] LPIPS
-- [] FID
-- [] IS
+- [ ] FID
+- [ ] IS
 ### To-do tasks
 - [x] implementation of the framework
 - [x] primary check for errors
