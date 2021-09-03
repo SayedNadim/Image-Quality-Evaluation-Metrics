@@ -49,11 +49,12 @@ class ImageQualityMetric(nn.Module):
         else:
             self.device = 'cpu'
 
-        print("Configuration")
-        print("=" * 80)
-        for key, value in config.items():
-            print("{}: {}".format(key, value))
-        print("=" * 80)
+        if config['show_config']:
+            print("Configuration")
+            print("=" * 80)
+            for key, value in config.items():
+                print("{}: {}".format(key, value))
+            print("=" * 80)
         print("Dataset Statistics - "
               "Total {} images found.".format(len(self.dataloader) * self.config['batch_size']))
         print("=" * 80)

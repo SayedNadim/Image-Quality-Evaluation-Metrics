@@ -105,6 +105,7 @@ def main(config):
     returns - None.
     """
     # ================= structure 2 ===================#
+
     if config['multiple_evaluation']:  # check for multiple evaluation
         folder_path = config['generated_image_path']  # select path
         folder_path_list = find_folders(folder_path)  # find the root subfolders
@@ -113,59 +114,73 @@ def main(config):
         for i in range(len(folder_path_list)):  # start looping over the found subdirs
             sub_folder_list.append(folder_path + '/' + folder_path_list[i])  # add the folders in the sub_folder_list
             individual_folders_list = find_folders(sub_folder_list[i])  # find folders in the first subfolder
-            for j in range(len(individual_folders_list)):  # go to the first subfolder
-                individual_folders = sub_folder_list[i] + '/' + individual_folders_list[j]  # take the path
-                dataloader = build_dataloader_multiple_evaluation(config=config,
-                                                                  data_path=individual_folders,
-                                                                  fid=False,
-                                                                  fid_ground_truth_or_image='none',
-                                                                  batch_size=config['batch_size'],
-                                                                  shuffle=False,
-                                                                  num_workers=config['threads'])
+            if len(individual_folders_list) != 0:
+                for j in range(len(individual_folders_list)):  # go to the first subfolder
+                    print("=" * 80)
+                    print("Working with structure 2")
+                    print("=" * 80)
+                    print("=" * 80)
+                    print("Currently in {}".format(str(individual_folders_list[i])))
+                    print("=" * 80)
+                    individual_folders = sub_folder_list[i] + '/' + individual_folders_list[j]  # take the path
+                    dataloader = build_dataloader_multiple_evaluation(config=config,
+                                                                      data_path=individual_folders,
+                                                                      fid=False,
+                                                                      fid_ground_truth_or_image='none',
+                                                                      batch_size=config['batch_size'],
+                                                                      shuffle=False,
+                                                                      num_workers=config['threads'])
 
-                # For FID/IS calculation.
-                feat_dataloader_img = build_dataloader_multiple_evaluation(config=config,
-                                                                           data_path=individual_folders,
-                                                                           fid=True,
-                                                                           fid_ground_truth_or_image='img',
-                                                                           batch_size=config['batch_size'],
-                                                                           shuffle=False,
-                                                                           num_workers=config['threads'])
-                feat_dataloader_ground_truth = build_dataloader_multiple_evaluation(config=config,
-                                                                                    data_path=individual_folders,
-                                                                                    fid=True,
-                                                                                    fid_ground_truth_or_image='ground_truth',
-                                                                                    batch_size=config['batch_size'],
-                                                                                    shuffle=False,
-                                                                                    num_workers=config['threads'])
+                    # For FID/IS calculation.
+                    feat_dataloader_img = build_dataloader_multiple_evaluation(config=config,
+                                                                               data_path=individual_folders,
+                                                                               fid=True,
+                                                                               fid_ground_truth_or_image='img',
+                                                                               batch_size=config['batch_size'],
+                                                                               shuffle=False,
+                                                                               num_workers=config['threads'])
+                    feat_dataloader_ground_truth = build_dataloader_multiple_evaluation(config=config,
+                                                                                        data_path=individual_folders,
+                                                                                        fid=True,
+                                                                                        fid_ground_truth_or_image='ground_truth',
+                                                                                        batch_size=config['batch_size'],
+                                                                                        shuffle=False,
+                                                                                        num_workers=config['threads'])
 
-                # Calling metric classes
-                metrics = calculate_metrics(config=config, dataloader=dataloader,
-                                            feat_dataloader_img=feat_dataloader_img,
-                                            feat_dataloader_ground_truth=feat_dataloader_ground_truth)
+                    # Calling metric classes
+                    metrics = calculate_metrics(config=config, dataloader=dataloader,
+                                                feat_dataloader_img=feat_dataloader_img,
+                                                feat_dataloader_ground_truth=feat_dataloader_ground_truth)
 
-                print("Evaluation Results")
-                for key, value in metrics.items():
-                    print("{}: {}".format(key, value))
-                print("=" * 80)
-                # saving files
-                if config['save_results']:
-                    individual_sub_folder_tail_2 = individual_folders[-10:]  # make sure to edit based on your need!
-                    individual_sub_folder_tail_1 = individual_folders[-18:-11]  # make sure to edit based on your need!
-                    name = config['save_file_name'] + \
-                           '_' + config['dataset_name'] + \
-                           '_' + config['model_name'] + '_' + \
-                           individual_sub_folder_tail_1 + '_' + \
-                           individual_sub_folder_tail_2 + '.csv'
-                    save_results(config=config, metrics=metrics, name=name)
-                print("Done with {} folder".format(j))
-                print("=" * 80)
-                print("\n")
+                    print("Evaluation Results")
+                    for key, value in metrics.items():
+                        print("{}: {}".format(key, value))
+                    print("=" * 80)
+                    # saving files
+                    if config['save_results']:
+                        individual_sub_folder_tail_2 = individual_folders[-10:]  # make sure to edit based on your need!
+                        individual_sub_folder_tail_1 = individual_folders[
+                                                       -18:-11]  # make sure to edit based on your need!
+                        name = config['save_file_name'] + \
+                               '_' + config['dataset_name'] + \
+                               '_' + config['model_name'] + '_' + \
+                               individual_sub_folder_tail_1 + '_' + \
+                               individual_sub_folder_tail_2 + '.csv'
+                        save_results(config=config, metrics=metrics, name=name)
+                    print("Done with {} folder".format(j))
+                    print("=" * 80)
+                    print("\n")
 
-                count += 1
+                    count += 1
 
             else:
                 # ================= structure 1 ===================#
+                print("=" * 80)
+                print("Working with structure 1")
+                print("=" * 80)
+                print("=" * 80)
+                print("Currently in {}".format(str(sub_folder_list[i])))
+                print("=" * 80)
                 individual_folders = sub_folder_list[i]
                 dataloader = build_dataloader_multiple_evaluation(config=config,
                                                                   data_path=individual_folders,
