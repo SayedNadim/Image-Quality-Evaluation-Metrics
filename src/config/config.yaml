@@ -1,13 +1,15 @@
 # data parameters
-dataset_name: Places                         # used for saving csv. Easy to remember which dataset you're evalulating, especially, if you're using multiple datasets.
+dataset_name: best_dataset                         # used for saving csv. Easy to remember which dataset you're evalulating, especially, if you're using multiple datasets.
 dataset_with_subfolders: False               # True
 dataset_format: image                        # file_list # file_list is not implemented. I will implement it later. Easier to implement.
-generated_image_path: ./generated_image_folder     # Path to the generated/reproduced/output images.
-ground_truth_image_path: ./ground_truth_image_folder # Path to the corresponding ground truth images.
+multiple_evaluation: True # False
+generated_image_path: ./generated_image_path
+ground_truth_image_path: ./ground_truth_image_path
 return_dataset_name: False                   # Currently, no use. In future, it will be used for multi-testing.
 
+
 # experiment
-model_name: own                              # used for saving the results in csv. Easy to track which model you're evaluating, in case of working for comparison. 
+model_name: raw                              # used for saving the results in csv. Easy to track which model you're evaluating, in case of working for comparison.
 
 # processing parameters
 batch_size: 4                                # set according to your GPU/CPU
@@ -20,6 +22,6 @@ print_interval_frequency: 1                  # not used currently. In future, it
 
 # save options
 save_results: True                           # if True, then the final evaluation results will be saved in csv format.
-save_results_path: src/results/              # Path to save the csv results.
+save_results_path: ./results/logs/             # Path to save the csv results.
 save_file_name: metrics                      # Name of result file
 save_type: csv # npz                         # format of the file. Currently, npz is not implementd. In future, it will be used for memery saving, if required.

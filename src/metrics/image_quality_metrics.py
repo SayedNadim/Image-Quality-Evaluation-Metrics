@@ -50,17 +50,17 @@ class ImageQualityMetric(nn.Module):
             self.device = 'cpu'
 
         print("Configuration")
-        print("-" * 80)
+        print("=" * 80)
         for key, value in config.items():
             print("{}: {}".format(key, value))
-        print("-" * 80)
+        print("=" * 80)
         print("Dataset Statistics - "
               "Total {} images found.".format(len(self.dataloader) * self.config['batch_size']))
-        print("-" * 80)
+        print("=" * 80)
         print("Calculating image-level inpainting metrics. "
               "Please wait till the progress bar in 100%."
               )
-        print("-" * 80)
+        print("=" * 80)
 
     def forward(self):
         """
@@ -93,11 +93,11 @@ class ImageQualityMetric(nn.Module):
             lpips_mean = torch.mean(torch.stack(lpips_value))  # pylint: disable=maybe-no-member
 
             # # fid
-            print("-" * 80)
+            print("=" * 80)
             print("Computing feature-level inpainting metrics. "
                   "Please wait. It may take some moment."
                   )
-            print("-" * 80)
+            print("=" * 80)
             img_load, ground_truth_load = \
                 self.feature_dataloader_img, self.feature_dataloader_ground_truth
             img_feature = self.fid_class.compute_feats(img_load)
@@ -109,12 +109,12 @@ class ImageQualityMetric(nn.Module):
 
             t_2 = time.time()
 
-            print("-" * 80)
+            print("=" * 80)
             print(
                 "\n"
                 "Finished in {:4f}s."
                 "\n".format(t_2 - t_0))
-            print("-" * 80)
+            print("=" * 80)
 
             return {"l1": l1_mean,
                     "l2": l2_mean,

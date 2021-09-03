@@ -20,6 +20,9 @@ import skimage.feature as feature
 
 # for sorting
 import re
+from natsort import natsorted
+import fnmatch
+
 
 # helper functions
 
@@ -42,7 +45,7 @@ def default_flist_reader(flist):
             dirpath = line.strip().split()
             im_list.append(dirpath)
 
-    return im_list
+    return natsorted(im_list)
 
 
 # image reader
@@ -137,7 +140,7 @@ def get_crop_params(image, crop_size, crop_method='random_crop'):
     return {'top_left': (start_x, start_y), 'right_bottom': (end_x, end_y)}
 
 
-def crop_image(image, crop_pos, crop_size= (256,256), save_image=False):
+def crop_image(image, crop_pos, crop_size=(256, 256), save_image=False):
     if crop_pos == None:
         crop_pos = get_crop_params(image, crop_size)
     top_left = crop_pos.get('top_left')
@@ -223,8 +226,12 @@ def find_samples_in_subfolders(dir):
                     # item = (path, class_to_idx[target])
                     # samples.append(item)
                     samples.append(path)
-    return samples
+    return natsorted(samples)
 
+
+def find_folders(rootdir):
+    samples =  [dI for dI in os.listdir(rootdir) if os.path.isdir(os.path.join(rootdir, dI))]
+    return natsorted(samples)
 
 # sorting help
 def atoi(text):

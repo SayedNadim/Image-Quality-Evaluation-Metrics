@@ -8,9 +8,9 @@ from src.utils.utils import natural_keys, allowed_image_extensions, image_reader
 from PIL import Image
 
 
-class Dataset(data.Dataset):
+class DatasetSingleEvaluation(data.Dataset):
     def __init__(self, config, fid=False, fid_ground_truth_or_image='none'):
-        super(Dataset, self).__init__()
+        super(DatasetSingleEvaluation, self).__init__()
         self.config = config
         self.fid = fid
         self.fid_ground_truth_or_img = fid_ground_truth_or_image
@@ -57,7 +57,8 @@ class Dataset(data.Dataset):
                 return {"images": img}
             else:
                 raise KeyError(
-                    "FID/IS is true but return type is none. Please make two dataloaders and select img/ground_truth as "
+                    "FID/IS is true but return type is none. "
+                    "Please make two dataloaders and select img/ground_truth as "
                     "inputs for the dataloaders")
         else:
             if self.return_dataset_name:
@@ -69,9 +70,9 @@ class Dataset(data.Dataset):
         return len(self.ground_truth_samples)
 
 
-def build_dataloader(config, fid, fid_ground_truth_or_image, batch_size,
+def build_dataloader_single_evaluation(config, fid, fid_ground_truth_or_image, batch_size,
                      num_workers, shuffle=False):
-    dataset = Dataset(
+    dataset = DatasetSingleEvaluation(
         config=config,
         fid=fid,
         fid_ground_truth_or_image=fid_ground_truth_or_image

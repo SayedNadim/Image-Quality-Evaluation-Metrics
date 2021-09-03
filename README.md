@@ -5,6 +5,8 @@ The goal of this repo is to provide a common evaluation script for image evaluat
 
 Pull requests and  corrections/suggestions will be cordially appreciated. 
 
+### *FID and IS may be buggy. I will check and confirm. Other metrics are ok!*
+
 ### Please Note
 - Images are scaled to [0,1]. If you need to change the data range, please make sure to change the data range in SSIM and PSNR.
 - Number of generated images and ground truth images have to be exactly same. 
@@ -43,8 +45,8 @@ Pull requests and  corrections/suggestions will be cordially appreciated.
 - [x] SSIM
 - [x] PSNR
 - [x] LPIPS
-- [x] FID
-- [x] IS
+- [] FID
+- [] IS
 ### To-do tasks
 - [x] implementation of the framework
 - [x] primary check for errors
