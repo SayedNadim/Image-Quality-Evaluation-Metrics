@@ -3,13 +3,13 @@ dataset_name: best_dataset                         # used for saving csv. Easy t
 dataset_with_subfolders: False               # True
 dataset_format: image                        # file_list # file_list is not implemented. I will implement it later. Easier to implement.
 multiple_evaluation: True # False
-generated_image_path: /media/la-belva/2681c8e6-6bc0-4b9f-9dba-22ade6dedc89/home/la_belva/PycharmProjects/Comparison_models/pytorch-inpainting-with-partial-conv/output_full_partial/output
+generated_image_path: /media/la-belva/2681c8e6-6bc0-4b9f-9dba-22ade6dedc89/home/la_belva/PycharmProjects/Comparison_models/generative_inpainting/test_results_gated_full_places/output
 ground_truth_image_path: /media/la-belva/2681c8e6-6bc0-4b9f-9dba-22ade6dedc89/home/la_belva/PycharmProjects/Comparison_values/places_random_1000
 return_dataset_name: False                   # Currently, no use. In future, it will be used for multi-testing.
 
 
 # experiment
-model_name: pconv                              # used for saving the results in csv. Easy to track which model you're evaluating, in case of working for comparison.
+model_name: gated                              # used for saving the results in csv. Easy to track which model you're evaluating, in case of working for comparison.
 
 # processing parameters
 batch_size: 4                                # set according to your GPU/CPU
@@ -23,6 +23,6 @@ show_config: False
 
 # save options
 save_results: True                           # if True, then the final evaluation results will be saved in csv format.
-save_results_path: /home/la-belva/Research_Ground/DIFNET_ACCESS/Results/logs/places/pconv
+save_results_path: /home/la-belva/Research_Ground/DIFNET_ACCESS/Results/logs/places/gated
 save_file_name: metrics                      # Name of result file
 save_type: csv # npz                         # format of the file. Currently, npz is not implementd. In future, it will be used for memery saving, if required.

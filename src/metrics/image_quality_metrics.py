@@ -18,6 +18,16 @@ warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 
+def calculate_metrics(config, dataloader, feat_dataloader_img, feat_dataloader_ground_truth):
+    metric_class = ImageQualityMetric(config,
+                                      dataloader,
+                                      feat_dataloader_img,
+                                      feat_dataloader_ground_truth)
+    metrics = metric_class()
+    return metrics
+
+
+
 class ImageQualityMetric(nn.Module):
     """
     Image quality metric class.
