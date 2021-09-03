@@ -12,7 +12,7 @@ import piq
 
 from tqdm import tqdm
 
-from src.metrics.psnr import psnr_calculation
+from src.evaluation_metrics.psnr import psnr_calculation
 
 warnings.filterwarnings("ignore", category=UserWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
