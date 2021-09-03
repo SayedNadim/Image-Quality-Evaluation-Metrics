@@ -77,7 +77,7 @@ as per your need.
     |        |- image_1
     |        |- image_2
     |        | - .....
-    |    |- file_10_20
+    |    |- file_20_30
     |        |- image_1
     |        |- image_2
     |         | - .....
