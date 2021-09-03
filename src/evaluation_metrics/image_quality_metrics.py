@@ -114,10 +114,6 @@ class ImageQualityMetric(nn.Module):
             img_feature = self.fid_class.compute_feats(img_load)
             ground_truth_feature = self.fid_class.compute_feats(ground_truth_load)
             fid_value = self.fid_class.compute_metric(img_feature, ground_truth_feature)
-            img_feature_is = self.is_class.compute_feats(img_load)
-            ground_truth_feature_is = self.is_class.compute_feats(ground_truth_load)
-            is_value = self.is_class.compute_metric(img_feature_is, ground_truth_feature_is)
-
             t_2 = time.time()
 
             print("=" * 80)
@@ -132,5 +128,4 @@ class ImageQualityMetric(nn.Module):
                     "ssim": ssim_mean,
                     "psnr": psnr_mean,
                     "lpips": lpips_mean,
-                    "fid": fid_value,
-                    "is": is_value}
+                    "fid": fid_value}

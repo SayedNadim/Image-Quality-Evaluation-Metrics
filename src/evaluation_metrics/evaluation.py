@@ -162,8 +162,8 @@ def multiple_evaluation(config):
                 print("=" * 80)
                 # saving files
                 if config['save_results']:
-                    individual_sub_folder_tail_1 = individual_folders.split('/')[-2]  # make sure to edit based on your need!
-                    individual_sub_folder_tail_2 = individual_folders.split('/')[-1]  # make sure to edit based on your need!
+                    individual_sub_folder_tail_1 = individual_folders.split('/')[-2]
+                    individual_sub_folder_tail_2 = individual_folders.split('/')[-1]
                     name =  individual_sub_folder_tail_1 + '/' + \
                            individual_sub_folder_tail_2
                     save_results(config=config, metrics=metrics, name=name)

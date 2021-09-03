@@ -108,8 +108,6 @@ as per your need.
 
 ```
 
-####  *Please edit the names of the folders or edit the string length in the `main.py` file to match your folder string name.* 
-
 ### To-do metrics
 
 - [x] L1
