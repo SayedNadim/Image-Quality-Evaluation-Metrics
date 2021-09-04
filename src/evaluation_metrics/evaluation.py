@@ -1,6 +1,6 @@
 from src.dataset.dataset_single_evaluation import build_dataloader_single_evaluation
 from src.dataset.dataset_multiple_evaluation import build_dataloader_multiple_evaluation
-from src.metrics.image_quality_metrics import calculate_metrics
+from src.evaluation_metrics.image_quality_metrics import calculate_metrics
 from src.utils.utils import find_folders
 from src.utils.save_utils import save_results
 
