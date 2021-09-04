@@ -1,19 +1,19 @@
 # data parameters
-dataset_name: best_dataset                         # used for saving csv. Easy to remember which dataset you're evalulating, especially, if you're using multiple datasets.
+dataset_name: celeba                         # used for saving csv. Easy to remember which dataset you're evalulating, especially, if you're using multiple datasets.
 dataset_with_subfolders: False               # True
 dataset_format: image                        # file_list # file_list is not implemented. I will implement it later. Easier to implement.
-multiple_evaluation: False # False
-generated_image_path: /home/soikat/Desktop/output/gt
-ground_truth_image_path: /home/soikat/Desktop/output/gt
+multiple_evaluation: True
+generated_image_path: /media/la-belva/E/LAB_ALL/with_ca/test_results_attention_mechanism/output
+ground_truth_image_path: /media/la-belva/2681c8e6-6bc0-4b9f-9dba-22ade6dedc89/home/la_belva/PycharmProjects/Comparison_values/celeba_random_150
 return_dataset_name: False                   # Currently, no use. In future, it will be used for multi-testing.
 
 
 # experiment
-model_name: ggla                              # used for saving the results in csv. Easy to track which model you're evaluating, in case of working for comparison.
+model_name: with_ca
 
 # processing parameters
 batch_size: 4                                # set according to your GPU/CPU
-image_shape: [ 64, 64, 3 ]                 # set according to your need.
+image_shape: [ 256, 256, 3 ]                 # set according to your need.
 random_crop: False                           # currently, not implemented. In future, it will be used to evaluate patches.
 threads: 4                                   # set according to your CPU.
 
@@ -22,7 +22,7 @@ print_interval_frequency: 1
 show_config: False
 
 # save options
-save_results: True                           # if True, then the final evaluation results will be saved in csv format.
-save_results_path: /home/soikat/Desktop/output/save
-save_file_name: metrics                      # Name of result file
-save_type: csv # npz                         # format of the file. Currently, npz is not implementd. In future, it will be used for memery saving, if required.
+save_results: True
+save_results_path: /home/la-belva/Research_Ground/DIFNET_ACCESS/Results/logs/ablation/attention
+save_file_name: metrics
+save_type: csv

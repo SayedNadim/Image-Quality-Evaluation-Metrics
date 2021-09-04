@@ -7,7 +7,7 @@ cheers
 """
 
 from src.utils.config import get_config
-from src.metrics.evaluation import single_evaluation, multiple_evaluation
+from src.evaluation_metrics.evaluation import single_evaluation, multiple_evaluation
 
 
 def main(config):
