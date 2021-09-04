@@ -10,7 +10,8 @@ def save_results(config, metrics, name=None):
     if not os.path.exists(config['save_results_path']):
         os.mkdir(config['save_results_path'])
 
-    save_file_name = config['save_file_name'] + config['dataset_name'] + config['model_name'] + '.csv'
+    save_file_name = config['exp_type'] + "_" + config['save_file_name'] + "_" + config['dataset_name'] + "_" + config[
+        'model_name'] + '.csv'
 
     if not os.path.exists(os.path.join(config['save_results_path'], save_file_name)):
         os.mknod(os.path.join(config['save_results_path'], save_file_name))
@@ -18,9 +19,10 @@ def save_results(config, metrics, name=None):
 
     with open(result_file_path, 'a') as csv_file:
         writer = csv.writer(csv_file)
+        writer.writerow(['Experiment Name:', config['exp_type']])
         writer.writerow(['Dataset Name:', config['dataset_name']])
         writer.writerow(['Model Name', config['model_name']])
-        writer.writerow(['Sub Folders', name])
+        writer.writerow(['Sub-Folder', name])
         writer.writerow(['Record Time:', current_time])
         writer.writerow([])
         for key, value in metrics.items():

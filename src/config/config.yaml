@@ -3,13 +3,14 @@ dataset_name: celeba                         # used for saving csv. Easy to reme
 dataset_with_subfolders: False               # True
 dataset_format: image                        # file_list # file_list is not implemented. I will implement it later. Easier to implement.
 multiple_evaluation: True
-generated_image_path: /media/la-belva/E/LAB_ALL/with_ca/test_results_attention_mechanism/output
+generated_image_path: /media/la-belva/E/LAB_ALL/LAB_Inpainting_CelebA/test_results_ablation_attention_mechanism/output
 ground_truth_image_path: /media/la-belva/2681c8e6-6bc0-4b9f-9dba-22ade6dedc89/home/la_belva/PycharmProjects/Comparison_values/celeba_random_150
 return_dataset_name: False                   # Currently, no use. In future, it will be used for multi-testing.
 
 
 # experiment
-model_name: with_ca
+exp_type: ablation
+model_name: difnet
 
 # processing parameters
 batch_size: 4                                # set according to your GPU/CPU
